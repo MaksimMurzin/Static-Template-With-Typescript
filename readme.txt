@@ -4,5 +4,12 @@ if you are making changes to typescript you will need to recompile using:
     `npx tsc --watch`
 
 now that everything is packaged with vite you can use:
-npm run dev 
+` npm run dev ` 
 to run the project
+
+## Running Vite 
+- locally run: 
+`npx vite`
+
+- for production: 
+`npx vite build`
