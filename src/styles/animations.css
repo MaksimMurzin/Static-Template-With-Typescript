@@ -1,0 +1,51 @@
+html {
+  scroll-behavior: smooth;
+}
+
+/* ========================== hover animaitons ======================== */
+
+/* Common hover-lift effect for cards, buttons, etc. */
+.hover-lift {
+  transition: all 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.3);
+}
+
+/* Optional variant for dark elements (so shadow blends better) */
+.hover-lift-dark:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 8px 18px rgba(255, 255, 255, 0.2);
+}
+
+/*  ========================== ripple animaiton================== */
+/* --- Ripple Effect --- */
+.ripple::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.6);
+  transform: scale(0);
+  opacity: 0;
+  pointer-events: none;
+  animation: none;
+}
+
+.ripple.active::after {
+  animation: rippleEffect 0.6s linear;
+}
+
+@keyframes rippleEffect {
+  0% {
+    transform: scale(0);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(40);
+    opacity: 0;
+  }
+}
