@@ -4,11 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Landing Page</title>
-    <!-- <link rel="stylesheet" href="./styles/style.css" />
-    <link rel="stylesheet" href="./styles/projects.css" />
-    <link rel="stylesheet" href="./styles/buttons.css" />
-    <link rel="stylesheet" href="./styles/contact-me.css" />
-    <link rel="stylesheet" href="./styles/animations.css" /> -->
+    <link rel="stylesheet" href="./src/styles/style.css" />
+    <link rel="stylesheet" href="./src/styles/projects.css" />
+    <link rel="stylesheet" href="./src/styles/buttons.css" />
+    <link rel="stylesheet" href="./src/styles/contact-me.css" />
+    <link rel="stylesheet" href="./src/styles/animations.css" />
   </head>
   <body>
     <main>
@@ -23,8 +23,6 @@
           This is a simple static landing page built with HTML and CSS. You can
           customize it to suit your needs.
         </p>
-        <!-- <a href="#contact" class="cta-button"></a> -->
-        <!-- <button href="#contact">Get Started</button> -->
         <button id="getStartedBtn" class="cta-button ripple">
           Get Started
         </button>
@@ -80,7 +78,7 @@
               <textarea id="message" name="message" rows="4" required></textarea
               ><br /><br />
 
-              <button type="submit">Send</button>
+              <button class="ripple" type="submit">Send</button>
             </form>
           </div>
         </div>
@@ -88,6 +86,61 @@
     </main>
 
     <footer>&copy; 2025 Maksim. All rights reserved.</footer>
-    <script type="module" src="/src/main.ts"></script>
+
+    <script>
+      const modal = document.getElementById("modalOverlay");
+      const openBtn = document.getElementById("openContactMe");
+      const closeBtn = document.getElementById("closeModalBtn");
+      if (!modal || !openBtn || !closeBtn) {
+        console.warn("⚠️ Modal elements not found in DOM.");
+      }
+      // Open modal
+      openBtn.addEventListener("click", () => {
+        modal.classList.remove("hidden");
+      });
+      // Close modal
+      closeBtn.addEventListener("click", () => {
+        modal.classList.add("hidden");
+      });
+      // Close when clicking the backdrop
+      modal.addEventListener("click", (e) => {
+        if (e.target === modal) {
+          modal.classList.add("hidden");
+        }
+      });
+    </script>
+
+    <!-- ripple effect -->
+    <script>
+      function triggerRippleEffect(e) {
+        const target = e.currentTarget;
+        if (!target.classList.contains("ripple")) return;
+
+        target.classList.remove("active"); // reset if clicked fast again
+        void target.offsetWidth; // trigger reflow
+        target.classList.add("active");
+      }
+
+      // Attach ripple to all elements with class "ripple"
+      document.querySelectorAll(".ripple").forEach((el) => {
+        el.addEventListener("click", triggerRippleEffect);
+      });
+    </script>
+
+    <!-- smooth scroll -->
+    <script>
+      const btn = document.getElementById("getStartedBtn");
+
+      function smoothScrollToContact() {
+        const contactSection = document.querySelector("#contact");
+        if (contactSection) {
+          contactSection.scrollIntoView({ behavior: "smooth" });
+        }
+      }
+
+      if (btn) {
+        btn.addEventListener("click", smoothScrollToContact);
+      }
+    </script>
   </body>
 </html>
