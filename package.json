@@ -2,7 +2,7 @@
   "type": "module",
   "devDependencies": {
     "typescript": "^5.x",
-    "vite": "^5.x"
+    "vite": "^7.1.9"
   },
   "scripts": {
     "dev": "vite",
