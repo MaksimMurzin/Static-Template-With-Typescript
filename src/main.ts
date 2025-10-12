@@ -4,11 +4,12 @@ import "./styles/buttons.css";
 import "./styles/animations.css";
 import "./styles/contact-me.css";
 import "./styles/projects.css";
+import "./styles/fonts.css";
 
 // Import your feature modules
 import { initModal } from "./modules/contact-me";
 import { enableSmoothScroll } from "./modules/smooth-scroll";
-import { enableRipple } from "./modules/ripple";
+import { attachRippleEffect } from "./modules/ripple";
 
 // Wait for the DOM to load before initializing
 window.addEventListener("DOMContentLoaded", () => {
@@ -17,5 +18,5 @@ window.addEventListener("DOMContentLoaded", () => {
   // Initialize feature modules
   initModal();
   enableSmoothScroll();
-  enableRipple();
+  attachRippleEffect();
 });
