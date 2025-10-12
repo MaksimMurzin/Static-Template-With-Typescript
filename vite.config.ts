@@ -1,5 +1,9 @@
 import { defineConfig } from "vite";
+
 export default defineConfig({
   root: ".",
-  build: { outDir: "dist" },
+  base: "/Static-Template-With-Typescript/",
+  build: {
+    outDir: "dist",
+  },
 });

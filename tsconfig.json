@@ -1,9 +1,11 @@
 {
   "compilerOptions": {
-    "target": "ES6",
-    "module": "ES6",
+    "target": "ESNext", // Enables top-level await and modern JS features
+    "module": "ESNext", // Works better with Vite's native ESM support
+    "moduleResolution": "Node", // Ensures proper resolution of node modules
     "outDir": "dist",
-    "strict": true
+    "strict": true,
+    "esModuleInterop": true // Helps with importing CommonJS modules
   },
   "include": ["src/**/*"]
 }
