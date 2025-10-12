@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Landing Page</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+    <!-- Preconnect for faster font loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap"
+      rel="stylesheet"
+    />
+    <script type="module" crossorigin src="/Static-Template-With-Typescript/assets/index-CzeIRKfT.js"></script>
+    <link rel="stylesheet" crossorigin href="/Static-Template-With-Typescript/assets/index-Dv2icojh.css">
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1 class="satisfy-regular">Welcome to My Site</h1>
+        <p>Your tagline goes here</p>
+      </header>
+
+      <section>
+        <h2>About</h2>
+        <p>
+          This is a simple static landing page built with HTML and CSS. You can
+          customize it to suit your needs.
+        </p>
+        <button id="getStartedBtn" class="cta-button ripple">
+          Get Started
+        </button>
+      </section>
+
+      <section id="projects">
+        <h2>Current Projects</h2>
+        <div class="projects-grid">
+          <div class="project-card ripple">
+            <h3>Project Alpha</h3>
+            <p>
+              A Linux automation script for managing user permissions across
+              multiple servers.
+            </p>
+          </div>
+          <div class="project-card ripple">
+            <h3>Project Beta</h3>
+            <p>
+              A cross-platform tool for decoding unknown file formats using CLI
+              utilities.
+            </p>
+          </div>
+          <div class="project-card ripple">
+            <h3>Project Gamma</h3>
+            <p>
+              A TypeScript-powered dashboard for monitoring system health and
+              logs.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact">
+        <h2>Contact</h2>
+        <button id="openContactMe" class="cta-button">Get in contact</button>
+
+        <div id="modalOverlay" class="modal-overlay hidden">
+          <div class="modal-content">
+            <span id="closeModalBtn" class="close-btn">&times;</span>
+            <form id="contactForm">
+              <label for="name">Name:</label><br />
+              <input type="text" id="name" name="name" required /><br /><br />
+
+              <label for="email">Email:</label><br />
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+              /><br /><br />
+
+              <label for="message">Message:</label><br />
+              <textarea id="message" name="message" rows="4" required></textarea
+              ><br /><br />
+
+              <button type="submit">Send</button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>&copy; 2025 Maksim. All rights reserved.</footer>
+  </body>
+</html>
